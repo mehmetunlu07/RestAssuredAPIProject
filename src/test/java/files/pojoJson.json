@@ -1,0 +1,38 @@
+{
+"instructor":"RahuShetty",
+"url":"rahulshettyacademy.com",
+"services":"projectSupport",
+"expertise":"Automation",
+"courses":{
+ 	"webAutomation":[
+		{ "courseTitle":"Selenium Webdriver",
+		  "price":"50"
+		},
+		{ "courseTitle":"Cypress",
+		  "price":"40"
+		},
+		{ "courseTitle":"Protractor",
+		  "price":"40"
+		}],
+	"api":[
+		{ "courseTitle":"Rest Assured",
+		  "price":"30"
+		},
+		{ "courseTitle":"SOAPUI",
+		  "price":"55"
+		},
+		{ "courseTitle":"Next Next",
+		  "price":"43"
+		}],
+	"mobile":[
+		{ "courseTitle":"Appium",
+		  "price":"60"
+		},
+		{ "courseTitle":"Mobile-1",
+		  "price":"58"
+		},
+		{ "courseTitle":"Mobile-2",
+		  "price":"45"
+		}]},
+"linkedIn":"https://www.linkedin.com/in/rahul-shetty-trainer"
+}
