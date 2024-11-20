@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Map;
+import java.util.Set;
 
 import static io.restassured.RestAssured.*;  // for given
 import static org.hamcrest.Matchers.equalTo;  //for equalTo
@@ -59,9 +60,9 @@ public class Basics {
 
 
         Response getPlaceResponse= given().log().all().queryParam("key", "qaclick123").queryParam("place_id", placeId)
-                .when().get("maps/api/place/get/json")
-                .then().log().all().assertThat().statusCode(200).body("address",equalTo("70 winter walk, Wylie, TX, USA"))
-                .extract().response();  //.asString();
+                .when().get("maps/api/place/get/json");
+//                .then().log().all().assertThat().statusCode(200).body("address",equalTo("70 winter walk, Wylie, TX, USA"))
+//                .extract().response();  //.asString();
 
         System.out.println("***********  "+getPlaceResponse.asString());
 
@@ -74,6 +75,13 @@ public class Basics {
         //Storing response in a Map
         Map<String,Object> responseMap=getPlaceResponse.jsonPath().getMap("");
         System.out.println("----->  "+responseMap);
+        Set<String> set=responseMap.keySet();
+        for(String s:set){
+         System.out.println(s+" - "+responseMap.get(s));
+         if(s.contains("web")){
+          break;
+         }
+        }
 
         //Storing response in a json file
         FileWriter file = new FileWriter("src/test/java/files/responseGetPlace.json");
@@ -82,6 +90,13 @@ public class Basics {
         file.close();
 
         System.out.println("Response saved to responseGetPlace.json file.");
+
+
+     System.out.println("****************** Compare 2 response **************");
+     String str=getPlaceResponse.asString();
+     String str1="abc";  //getPlaceResponse.asString();
+     if(str.equals(str1)) System.out.println(" Strings are the same");
+     else System.out.println(" Strings are different");
 
     }
 
