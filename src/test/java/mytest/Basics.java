@@ -23,6 +23,8 @@ public class Basics {
 
     public static void main(String[] args) throws IOException {
 
+
+
      /*
         given - all input details
         when - submit the api  - resource, http method
