@@ -20,7 +20,6 @@ import static org.hamcrest.Matchers.*;   //for equalTo
 
 public class Basics {
 
-
     public static void main(String[] args) throws IOException {
      /*
         given - all input details
@@ -34,7 +33,7 @@ public class Basics {
        RestAssured.baseURI = "https://rahulshettyacademy.com";
 
 //        String body=new String(Files.readAllBytes(Paths.get("src/test/java/files/AddPlaceJson.json")));  //Putting jason file in src
-//        System.out.println("Body :"+body);
+//        System.out.println("Body :"+body);    //just a commit
 
         String response = given().log().all().queryParam("key", "qaclick123").header("Content-Type", "application/json")
                 .body(new String(Files.readAllBytes(Paths.get("src/test/java/files/AddPlaceJson.json"))))
